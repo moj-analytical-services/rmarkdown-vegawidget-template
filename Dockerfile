@@ -1,5 +1,4 @@
-FROM rocker/shiny@sha256:627a2b7b3b6b1f6e33d37bdba835bbbd854acf70d74010645af71fc3ff6c32b6
-
+FROM rocker/shiny:latest
 WORKDIR /srv/shiny-server
 
 # Cleanup shiny-server dir
