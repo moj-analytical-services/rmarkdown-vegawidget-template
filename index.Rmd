@@ -8,24 +8,28 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(shiny)
+library(vegawidget)
 ```
 
 ## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Here is an R Markdown document which includes vega lite charts.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+It re-renders the R Markdown document each time you access the page.  This means that if you read data from s3, when the data updates, the markdown report will update.
 
 ```{r cars}
-summary(cars)
+ spec <- list(
+      `$schema` = vegawidget::vega_schema(), # specifies Vega-Lite
+      description = "An mtcars example.",
+      data = list(values = mtcars),
+      mark = "point",
+      encoding = list(
+        x = list(field = "wt", type = "quantitative"),
+        y = list(field = "mpg", type = "quantitative"),
+        color = list(field = "cyl", type = "nominal")
+      )
+    ) 
+  vg_spec <-vegawidget::as_vegaspec(spec)
+  vegawidget::vegawidget(vg_spec)
+  
 ```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

@@ -5,18 +5,23 @@ Repos: CRAN=https://cran.ma.imperial.ac.uk/
 
 Package: BH
 Source: CRAN
-Version: 1.66.0-1
-Hash: 4cc8883584b955ed01f38f68bc03af6d
+Version: 1.69.0-1
+Hash: 15f597ed227897f4f793b6161260f4b9
 
 Package: R6
 Source: CRAN
-Version: 2.2.2
-Hash: b2366cd9d2f3851a5704b4e192b985c2
+Version: 2.4.0
+Hash: 948a547c484e5bea15eee76cc53cce3f
 
 Package: Rcpp
 Source: CRAN
 Version: 1.0.1
 Hash: 390ed5b5da840cec3e6f5c90c6ab23f7
+
+Package: assertthat
+Source: CRAN
+Version: 0.2.1
+Hash: 622be49032fe50bd42e96aaef613e209
 
 Package: backports
 Source: CRAN
@@ -64,11 +69,17 @@ Version: 0.3.6
 Hash: ef5869fcbca46a9551ce5b78954a6c2e
 Requires: Rcpp, digest
 
+Package: htmlwidgets
+Source: CRAN
+Version: 1.3
+Hash: 17a2248b5e40383a1cb1a4e4cb5f9c7a
+Requires: htmltools, jsonlite, yaml
+
 Package: httpuv
 Source: CRAN
-Version: 1.4.3
-Hash: 6edd8a4e6b3d5e9421116c4196581aa7
-Requires: Rcpp, BH, later, promises
+Version: 1.5.0
+Hash: 1256e7a7626a3b8eb858faab9a574dea
+Requires: BH, R6, Rcpp, later, promises
 
 Package: jsonlite
 Source: CRAN
@@ -83,9 +94,9 @@ Requires: evaluate, highr, markdown, stringr, xfun, yaml
 
 Package: later
 Source: CRAN
-Version: 0.7.2
-Hash: 1a9fb80679a79d7dc294d502edfc0376
-Requires: Rcpp, BH, rlang
+Version: 0.8.0
+Hash: 3095c2ec3501f26373c7a7d047be82f3
+Requires: BH, Rcpp, rlang
 
 Package: magrittr
 Source: CRAN
@@ -111,13 +122,13 @@ Hash: 498643e765d1442ba7b1160a1df3abf9
 Package: promises
 Source: CRAN
 Version: 1.0.1
-Hash: 1c4e3d9c5b37587ff5d654b02284a06a
-Requires: Rcpp, magrittr, R6, later, rlang
+Hash: 5b73233bf19b201caa7d5f7351fd717e
+Requires: R6, Rcpp, later, magrittr, rlang
 
 Package: rlang
 Source: CRAN
-Version: 0.2.1
-Hash: 2b163b981be3d6daaac1ad505dd0bf30
+Version: 0.3.1
+Hash: 1176a91e0c23d4fc8f48bc5704a6f826
 
 Package: rmarkdown
 Source: CRAN
@@ -134,9 +145,9 @@ Requires: backports
 
 Package: shiny
 Source: CRAN
-Version: 1.1.0
-Hash: ab653b45dba6dc82eef68fb1e18a3b1a
-Requires: digest, jsonlite, mime, htmltools, R6, crayon, httpuv, later,
+Version: 1.2.0
+Hash: 6853126283ff0572d9f370a1520ac831
+Requires: R6, crayon, digest, htmltools, httpuv, jsonlite, later, mime,
     promises, rlang, sourcetools, xtable
 
 Package: sourcetools
@@ -161,6 +172,13 @@ Version: 0.11
 Hash: bcda6d10711135ce9ec0243bd2fb9d6c
 Requires: xfun
 
+Package: vegawidget
+Source: CRAN
+Version: 0.1.0
+Hash: 7243fa198a8e905229ba914f94c6c344
+Requires: assertthat, glue, htmltools, htmlwidgets, jsonlite, magrittr,
+    rlang, shiny
+
 Package: xfun
 Source: CRAN
 Version: 0.5
@@ -168,8 +186,8 @@ Hash: 384622a18a85624029dec83d26e588a6
 
 Package: xtable
 Source: CRAN
-Version: 1.8-2
-Hash: 7293235cfcc14cdff1ce7fd1a0212031
+Version: 1.8-3
+Hash: 857a3e7f33eac216c8d0d2fdbf0a3798
 
 Package: yaml
 Source: CRAN
