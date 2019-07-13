@@ -3,10 +3,12 @@ title: "Template document"
 author: "Robin Linacre"
 date: "13/07/2019"
 output: html_document
+runtime: shiny
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(cache=FALSE)
 library(shiny)
 library(vegawidget)
 ```
@@ -24,7 +26,7 @@ We're going to generate a report from this file.
 You can change the data in this file by running [this script](update_data.R)
 
 
-```{r echo=FALSE}
+```{r echo=FALSE, cache=FALSE}
 
 # data <- read.csv("data/random_data.csv")
 

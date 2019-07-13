@@ -3,3 +3,5 @@ Dockerfile
 .git
 .gitignore
 Jenkinsfile
+packrat/lib*
+packrat/src*
