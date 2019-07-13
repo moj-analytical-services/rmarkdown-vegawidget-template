@@ -17,6 +17,35 @@ Here is an R Markdown document which includes vega lite charts.
 
 It re-renders the R Markdown document each time you access the page.  This means that if you read data from s3, when the data updates, the markdown report will update.
 
+There is a file called data.csv that is stored in s3://alpha-app-rmarkdown-vegawidget-template/data.csv.  
+
+We're going to generate a report from this file.
+
+You can change the data in this file by running [this script](update_data.R)
+
+
+```{r echo=FALSE}
+
+# data <- read.csv("data/random_data.csv")
+
+dice_roll <- sample(1:6, size=50, replace=TRUE)
+person <- sample(c("Robin", "John", "David", "Jane", "Chloe", "Lily", "Sam"), size=50, replace=TRUE)
+value <- runif(100,0,100)
+data <- data.frame(person =person, dice_roll = dice_roll, value=value)
+
+
+my_chart <- vegawidget::as_vegaspec("charts/random_data.json")
+my_chart$data <- list("values"=data)
+my_chart
+
+```
+
+
+
+The mean of the values in the dataframe is `r mean(data$value)`
+
+```
+
 ```{r cars}
  spec <- list(
       `$schema` = vegawidget::vega_schema(), # specifies Vega-Lite
@@ -33,3 +62,14 @@ It re-renders the R Markdown document each time you access the page.  This means
   vegawidget::vegawidget(vg_spec)
   
 ```
+
+```{r echo=FALSE}
+
+data <- read.csv("data/seattle.csv")
+seattle <- vegawidget::as_vegaspec("charts/seattle.json")
+seattle$data <- list("values"=data)
+seattle
+
+
+```
+
