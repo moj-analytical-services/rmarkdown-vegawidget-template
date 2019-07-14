@@ -12,6 +12,11 @@ RUN apt-get update && \
 apt-get install --yes libxml2-dev libssl-dev && \
 apt-get clean && rm -rf /var/lib/apt/lists/
 
+RUN wget -q https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb
+RUN dpkg -i pandoc-2.7.3-1-amd64.deb
+
+
+
 # Add Packrat files individually so that next install command
 # can be cached as an image layer separate from application code
 ADD packrat packrat
