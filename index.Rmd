@@ -2,15 +2,27 @@
 title: "Template document"
 author: "Robin Linacre"
 date: "13/07/2019"
-output: html_document
+output:
+  govdown::govdown_document:
+    font: "sans-serif" # (default) or "new-transport"
+    favicon: none # or "none" (default) or "govuk" see ?govdown_document
+    logo: false # or false (default)
+    logo_url: "https://ukgovdatascience.github.io/govdown"
+    logo_text: "logo_text"
+    page_title: "page_title"
+    title: "title"
+    phase: beta
+    feedback_url: "https://github.com/ukgovdatascience/govdown/issues"
 runtime: shiny
 ---
 
 ```{r setup, include=FALSE}
+library(govdown)
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(cache=FALSE)
 library(shiny)
 library(vegawidget)
+
 ```
 
 ## R Markdown
