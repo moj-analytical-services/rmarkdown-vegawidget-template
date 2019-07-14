@@ -15,8 +15,6 @@ apt-get clean && rm -rf /var/lib/apt/lists/
 RUN wget -q https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb
 RUN dpkg -i pandoc-2.7.3-1-amd64.deb
 
-
-
 # Add Packrat files individually so that next install command
 # can be cached as an image layer separate from application code
 ADD packrat packrat
@@ -26,6 +24,10 @@ RUN R -e "install.packages('packrat'); packrat::restore()"
 
 # Add shiny app code
 ADD . .
+
+
+RUN apt-get update
+RUN sudo apt-get install -y vim curl
 
 # Shiny runs as 'shiny' user, adjust permissions
 RUN chown -R shiny:shiny /var/log/shiny-server && \
