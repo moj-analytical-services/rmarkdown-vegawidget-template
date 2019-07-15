@@ -61,17 +61,17 @@ Hash: 660bbbe3803c7cf7c9489a7d99a9c0ed
 Package: govdown
 Source: github
 Version: 0.4.1.9000
-Hash: 10361c183190bbad855244c1b7270bfb
+Hash: 9c85af7abdf979ff6def0eb450d0d7d1
 Requires: rmarkdown
 GithubRepo: govdown
-GithubUsername: ukgovdatascience
-GithubRef: master
-GithubSha1: 8b3e9bf0468cacbcc973adb1d519e83e551695a0
+GithubUsername: robinl
+GithubRef: issue_32
+GithubSha1: 8ecf8bb2fab94e06e2c1b5f7a2de2eb63bdebf75
 RemoteHost: api.github.com
 RemoteRepo: govdown
-RemoteUsername: ukgovdatascience
-RemoteRef: master
-RemoteSha: 8b3e9bf0468cacbcc973adb1d519e83e551695a0
+RemoteUsername: robinl
+RemoteRef: issue_32
+RemoteSha: 8ecf8bb2fab94e06e2c1b5f7a2de2eb63bdebf75
 
 Package: highr
 Source: CRAN
