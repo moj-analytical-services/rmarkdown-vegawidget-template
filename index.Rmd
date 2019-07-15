@@ -17,21 +17,26 @@ runtime: shiny
 ---
 
 ```{r setup, include=FALSE}
+
 library(govdown)
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(cache=FALSE)
 library(shiny)
 library(vegawidget)
 
+
+
 ```
 
 ## R Markdown
+
+
 
 Here is an R Markdown document which includes vega lite charts.
 
 It re-renders the R Markdown document each time you access the page.  This means that if you read data from s3, when the data updates, the markdown report will update.
 
-There is a file called data.csv that is stored in s3://alpha-app-rmarkdown-vegawidget-template/data.csv.  
+There is a file called data.csv that is stored in s3://alpha-app-rmarkdown-vegawidget-template/data.csv.
 
 We're going to generate a report from this file.
 
@@ -71,10 +76,10 @@ The mean of the values in the dataframe is `r mean(data$value)`
         y = list(field = "mpg", type = "quantitative"),
         color = list(field = "cyl", type = "nominal")
       )
-    ) 
+    )
   vg_spec <-vegawidget::as_vegaspec(spec)
   vegawidget::vegawidget(vg_spec)
-  
+
 ```
 
 ```{r echo=FALSE}
