@@ -45,12 +45,12 @@ You can change the data in this file by running [this script](update_data.R)
 
 ```{r echo=FALSE, cache=FALSE}
 
-# data <- read.csv("data/random_data.csv")
+data <- s3tools::s3_path_to_full_df("alpha-app-rmarkdown-vegawidget-template/random_data.csv")
 
-dice_roll <- sample(1:6, size=50, replace=TRUE)
-person <- sample(c("Robin", "John", "David", "Jane", "Chloe", "Lily", "Sam"), size=50, replace=TRUE)
-value <- runif(100,0,100)
-data <- data.frame(person =person, dice_roll = dice_roll, value=value)
+# dice_roll <- sample(1:6, size=50, replace=TRUE)
+# person <- sample(c("Robin", "John", "David", "Jane", "Chloe", "Lily", "Sam"), size=50, replace=TRUE)
+# value <- runif(100,0,100)
+# data <- data.frame(person =person, dice_roll = dice_roll, value=value)
 
 
 my_chart <- vegawidget::as_vegaspec("charts/random_data.json")
