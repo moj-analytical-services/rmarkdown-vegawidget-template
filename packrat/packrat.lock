@@ -81,6 +81,13 @@ Source: CRAN
 Version: 3.3
 Hash: b201f64e6e1469e8a3571c746ffa9059
 
+Package: devtools
+Source: CRAN
+Version: 1.13.4
+Hash: 80a77b22f641002c7ce0343baeaee300
+Requires: digest, jsonlite, httr, git2r, memoise, rstudioapi, whisker,
+    withr
+
 Package: digest
 Source: CRAN
 Version: 0.6.18
@@ -90,6 +97,11 @@ Package: evaluate
 Source: CRAN
 Version: 0.13
 Hash: 1853557a0ea0db2daebf597c7ce58d70
+
+Package: git2r
+Source: CRAN
+Version: 0.19.0
+Hash: f43864df2e3e32faca4b1b3b19405cf1
 
 Package: glue
 Source: CRAN
@@ -168,6 +180,12 @@ Version: 0.9
 Hash: 730f688930cef3223d59bd8aef679ab9
 Requires: mime
 
+Package: memoise
+Source: CRAN
+Version: 1.1.0
+Hash: 410fcd334bc626db100237cc1370f2e9
+Requires: digest
+
 Package: mime
 Source: CRAN
 Version: 0.6
@@ -207,6 +225,11 @@ Source: CRAN
 Version: 1.3-2
 Hash: a25c3f70c166fb3fbabc410eb32b6366
 Requires: backports
+
+Package: rstudioapi
+Source: CRAN
+Version: 0.7
+Hash: e2ebaff8160aff3e6b32e6e78a693c2d
 
 Package: s3tools
 Source: github
@@ -264,6 +287,16 @@ Version: 0.1.0
 Hash: 7243fa198a8e905229ba914f94c6c344
 Requires: assertthat, glue, htmltools, htmlwidgets, jsonlite, magrittr,
     rlang, shiny
+
+Package: whisker
+Source: CRAN
+Version: 0.3-2
+Hash: 803d662762e532705c2c066a82d066e7
+
+Package: withr
+Source: CRAN
+Version: 2.1.2
+Hash: d534108bcd5f34ec73e9eb523751ba20
 
 Package: xfun
 Source: CRAN
