@@ -4,7 +4,7 @@ author: "Robin Linacre"
 date: "13/07/2019"
 output:
   govdown::govdown_document:
-    font: "sans-serif" # (default) or "new-transport"
+    font: "new-transport" # (default) or "sans-serif"
     favicon: none # or "none" (default) or "govuk" see ?govdown_document
     logo: false # or false (default)
     logo_url: "https://ukgovdatascience.github.io/govdown"
@@ -25,34 +25,26 @@ library(shiny)
 library(vegawidget)
 library(rmarkdown)
 
-
 ```
 
 ## R Markdown
 
+This is a template for an R Markdown document which renders to a html website using gov.uk styling.
 
+It re-renders the R Markdown document each time you access the page.  This means that if you read data from s3, when the data updates, the markdown report will update.  To see it in action, you can the data in s3 file by running [this script](update_data.R), and then refresh the deployed app.
 
-Here is an R Markdown document which includes vega lite charts.
+We use the [`govdown`](https://github.com/ukgovdatascience/govdown) package for the styling, which means that our pages use the official [gov.uk design system](https://design-system.service.gov.uk/).
 
-It re-renders the R Markdown document each time you access the page.  This means that if you read data from s3, when the data updates, the markdown report will update.
-
-There is a file called data.csv that is stored in s3://alpha-app-rmarkdown-vegawidget-template/data.csv.
-
-We're going to generate a report from this file.
-
-You can change the data in this file by running [this script](update_data.R)
+I recommend the use of vega lite for html based charts.  You can read more about why [here](https://medium.com/@robin.linacre/why-im-backing-vega-lite-as-our-default-tool-for-data-visualisation-51c20970df39).
 
 
 ```{r echo=FALSE, cache=FALSE}
+# Some of these aren't actually required by the report, but without them packrat doesn't realise they're required
 
 data <- s3tools::s3_path_to_full_df("alpha-app-rmarkdown-vegawidget-template/random_data.csv")
 
-# dice_roll <- sample(1:6, size=50, replace=TRUE)
-# person <- sample(c("Robin", "John", "David", "Jane", "Chloe", "Lily", "Sam"), size=50, replace=TRUE)
-# value <- runif(100,0,100)
-# data <- data.frame(person =person, dice_roll = dice_roll, value=value)
-
-
+# Storing charts as json is recommended as it provides good separation of concerns.
+# It also means that the charts can more easily be used in other contexts (other web pages, Python etc.)
 my_chart <- vegawidget::as_vegaspec("charts/random_data.json")
 my_chart$data <- list("values"=data)
 my_chart
@@ -63,9 +55,10 @@ my_chart
 
 The mean of the values in the dataframe is `r mean(data$value)`
 
-```
+
 
 ```{r cars}
+# You can also build a vega lite spec in R code as follows.
  spec <- list(
       `$schema` = vegawidget::vega_schema(), # specifies Vega-Lite
       description = "An mtcars example.",
@@ -81,14 +74,3 @@ The mean of the values in the dataframe is `r mean(data$value)`
   vegawidget::vegawidget(vg_spec)
 
 ```
-
-```{r echo=FALSE}
-
-data <- read.csv("data/seattle.csv")
-seattle <- vegawidget::as_vegaspec("charts/seattle.json")
-seattle$data <- list("values"=data)
-seattle
-
-
-```
-
