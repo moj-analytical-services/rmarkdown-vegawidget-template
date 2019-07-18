@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(cache=FALSE)
 library(shiny)
 library(vegawidget)
-
+library(rmarkdown)
 
 
 ```
