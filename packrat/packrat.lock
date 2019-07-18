@@ -18,10 +18,43 @@ Source: CRAN
 Version: 1.0.1
 Hash: 390ed5b5da840cec3e6f5c90c6ab23f7
 
+Package: askpass
+Source: CRAN
+Version: 1.1
+Hash: 6f6c430e3cd0dd7d48f447700f4d7e7f
+Requires: sys
+
 Package: assertthat
 Source: CRAN
 Version: 0.2.1
 Hash: 622be49032fe50bd42e96aaef613e209
+
+Package: aws.ec2metadata
+Source: CRAN
+Version: 0.1.5
+Hash: 94d9de48db98e93feeafb837aa73723f
+Requires: curl, jsonlite
+
+Package: aws.s3
+Source: github
+Version: 0.3.20
+Hash: e9cedb669c7c160d60e2907faac72a15
+Requires: aws.signature, base64enc, curl, digest, httr, xml2
+GithubRepo: aws.s3
+GithubUsername: cloudyr
+GithubRef: master
+GithubSha1: 8c722f8e84ea9f645ea394ef0908cfc003251155
+RemoteHost: api.github.com
+RemoteRepo: aws.s3
+RemoteUsername: cloudyr
+RemoteRef: master
+RemoteSha: 8c722f8e84ea9f645ea394ef0908cfc003251155
+
+Package: aws.signature
+Source: CRAN
+Version: 0.4.4
+Hash: c17d69744d6a4031f9f7abbf1758b54e
+Requires: base64enc, digest
 
 Package: backports
 Source: CRAN
@@ -42,6 +75,11 @@ Package: crayon
 Source: CRAN
 Version: 1.3.4
 Hash: ff2840dd9b0d563fc80377a5a45510cd
+
+Package: curl
+Source: CRAN
+Version: 3.3
+Hash: b201f64e6e1469e8a3571c746ffa9059
 
 Package: digest
 Source: CRAN
@@ -96,6 +134,12 @@ Version: 1.5.0
 Hash: b19e6d1c9b8c4edbf5048e72bd70dcb4
 Requires: BH, R6, Rcpp, later, promises
 
+Package: httr
+Source: CRAN
+Version: 1.4.0
+Hash: 62d62d3ffcc9a34411b6e35a813f72dd
+Requires: R6, curl, jsonlite, mime, openssl
+
 Package: jsonlite
 Source: CRAN
 Version: 1.6
@@ -129,6 +173,12 @@ Source: CRAN
 Version: 0.6
 Hash: 2ed8f98b8284ad733f3907fc6e2f1334
 
+Package: openssl
+Source: CRAN
+Version: 1.3
+Hash: 7235e0ada86fbb386b7e2e3046cda46e
+Requires: askpass
+
 Package: packrat
 Source: CRAN
 Version: 0.5.0
@@ -158,6 +208,22 @@ Version: 1.3-2
 Hash: a25c3f70c166fb3fbabc410eb32b6366
 Requires: backports
 
+Package: s3tools
+Source: github
+Version: 0.0.9
+Hash: d60f4100735c4a16a3caf389303db417
+Requires: aws.ec2metadata, aws.s3, aws.signature, digest, httr,
+    jsonlite
+GithubRepo: s3tools
+GithubUsername: moj-analytical-services
+GithubRef: master
+GithubSha1: 934c9f9420acb168107979267660b2dbd31b6cd7
+RemoteHost: api.github.com
+RemoteRepo: s3tools
+RemoteUsername: moj-analytical-services
+RemoteRef: master
+RemoteSha: 934c9f9420acb168107979267660b2dbd31b6cd7
+
 Package: shiny
 Source: CRAN
 Version: 1.2.0
@@ -181,6 +247,11 @@ Version: 1.4.0
 Hash: 67da32dbb2a7a16f2ef124336358e54a
 Requires: glue, magrittr, stringi
 
+Package: sys
+Source: CRAN
+Version: 3.1
+Hash: dc2a997b1b9a2d3f9c234491153cb951
+
 Package: tinytex
 Source: CRAN
 Version: 0.11
@@ -198,6 +269,12 @@ Package: xfun
 Source: CRAN
 Version: 0.5
 Hash: 384622a18a85624029dec83d26e588a6
+
+Package: xml2
+Source: CRAN
+Version: 1.2.0
+Hash: 6e643a368e9748966b96332eaa631411
+Requires: Rcpp
 
 Package: xtable
 Source: CRAN
