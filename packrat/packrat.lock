@@ -81,13 +81,6 @@ Source: CRAN
 Version: 3.3
 Hash: b201f64e6e1469e8a3571c746ffa9059
 
-Package: devtools
-Source: CRAN
-Version: 1.13.4
-Hash: 80a77b22f641002c7ce0343baeaee300
-Requires: digest, jsonlite, httr, git2r, memoise, rstudioapi, whisker,
-    withr
-
 Package: digest
 Source: CRAN
 Version: 0.6.18
@@ -225,11 +218,6 @@ Source: CRAN
 Version: 1.3-2
 Hash: a25c3f70c166fb3fbabc410eb32b6366
 Requires: backports
-
-Package: rstudioapi
-Source: CRAN
-Version: 0.7
-Hash: e2ebaff8160aff3e6b32e6e78a693c2d
 
 Package: s3tools
 Source: github
