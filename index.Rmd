@@ -51,7 +51,27 @@ my_chart
 
 ```
 
+```{r echo = FALSE, results='asis'}
 
+colnames <- c("Person" = "person",
+                       "Dice Roll" = "dice_roll",
+                       "Value" = "value")
+
+options <- list(pageLength = 15,
+                 initComplete = DT::JS("function(settings, json) {",
+                                   "$('.datatables').css({'font-family': 'sans-serif'});",
+                                   "}"))
+
+try(options <- DT::formatRound(options, "value", digits = 2), silent=TRUE)
+
+  
+
+DT::datatable(data,
+          colnames = colnames,
+          options = options)
+            
+
+```
 
 The mean of the values in the dataframe is `r mean(data$value)`
 
