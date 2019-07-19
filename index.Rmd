@@ -4,7 +4,7 @@ author: "Robin Linacre"
 date: "13/07/2019"
 output:
   govdown::govdown_document:
-    font: "new-transport" # (default) or "sans-serif"
+    font: "sans-serif" # (default) or "new-transport"
     favicon: none # or "none" (default) or "govuk" see ?govdown_document
     logo: false # or false (default)
     logo_url: "https://ukgovdatascience.github.io/govdown"
@@ -35,10 +35,10 @@ It re-renders the R Markdown document each time you access the page.  This means
 
 We use the [`govdown`](https://github.com/ukgovdatascience/govdown) package for the styling, which means that our pages use the official [gov.uk design system](https://design-system.service.gov.uk/).
 
-I recommend the use of vega lite for html based charts.  You can read more about why [here](https://medium.com/@robin.linacre/why-im-backing-vega-lite-as-our-default-tool-for-data-visualisation-51c20970df39).
+I recommend the use of [vega lite](https://vega.github.io/vega-lite/examples/) for html based charts, and I've included [`vegawidget`](https://vegawidget.github.io/vegawidget/) package for this purpsoe .  You can read more about why [here](https://medium.com/@robin.linacre/why-im-backing-vega-lite-as-our-default-tool-for-data-visualisation-51c20970df39).
 
 
-```{r echo=FALSE, cache=FALSE}
+```{r echo=FALSE, cache=FALSE, message=FALSE, warning=FALSE}
 # Some of these aren't actually required by the report, but without them packrat doesn't realise they're required
 
 data <- s3tools::s3_path_to_full_df("alpha-app-rmarkdown-vegawidget-template/random_data.csv")

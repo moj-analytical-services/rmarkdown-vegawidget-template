@@ -3,4 +3,4 @@ person <- sample(c("Robin", "John", "David", "Jane", "Chloe", "Lily", "Sam"), si
 value <- runif(100,0,100)
 df <- data.frame(person =person, dice_roll = dice_roll, value=value)
 
-write.csv(df, "data/random_data.csv")
+s3tools::write_df_to_csv_in_s3(df, "alpha-app-rmarkdown-vegawidget-template/random_data.csv", overwrite = TRUE)
